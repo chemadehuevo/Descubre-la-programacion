@@ -1,0 +1,19 @@
+void dibuja() {
+
+
+    // Si el botón del ratón está pulsado encima del cuadrado cambia a verde
+    if (mousePressed == true) {
+        image("",90,90,150,150);
+    } else {
+        // Si no, rojo
+        image("",90,90,150,150);
+
+    }
+}
+
+
+
+
+void main(){
+  animate(dibuja);
+   }

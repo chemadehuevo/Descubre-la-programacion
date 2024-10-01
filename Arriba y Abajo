@@ -15,8 +15,8 @@ void player () {
 }
 void controles() {
   if (keyPressed && key=="up") {
-   y = y -1;
-  if (keyPressed && key=="down")
-    y = y +1;
-  }
+    y = y -1;}
+  if (keyPressed && key=="down") {
+    y = y +1;}
 }
+ 

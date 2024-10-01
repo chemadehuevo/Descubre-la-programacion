@@ -1,0 +1,22 @@
+int x= 160;
+int y= 160;
+
+void main() { 
+  animate(ejecutar);
+}
+void ejecutar() {
+  player();
+  controles(); 
+}
+
+void player () { 
+  background(255,0,0);
+  ellipse(x,y,15,15);
+}
+void controles() {
+  if (keyPressed && key=="up") {
+   y = y -1;
+  if (keyPressed && key=="down")
+    y = y +1;
+  }
+}

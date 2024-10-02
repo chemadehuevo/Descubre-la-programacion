@@ -14,16 +14,22 @@ void player () {
   ellipse(x,y,30,30);
 }
 void controles() {
-  if (keyPressed && key=="up") {
-    y = y -3;}
-  if (keyPressed && key=="down") {
-    y = y +3;}
-  if (keyPressed && key=="left") {
-    x = x -3;}
-  if (keyPressed && key=="right") {
-    x = x +3;}
+  if (keyPressed && key=="w") {
+    y = y -4;}
+  if (keyPressed && key=="s") {
+    y = y +4;}
+  if (keyPressed && key=="a") {
+    x = x -4;}
+  if (keyPressed && key=="d") {
+    x = x +4;}
   if (y==0){
-    y=160;
-  }
+    y=320;}
+  if (x==0){
+    x=320;}
+  if (y > 320){
+    y=0;}
+  if (x > 320){
+    x=0;}
 }
+ 
  

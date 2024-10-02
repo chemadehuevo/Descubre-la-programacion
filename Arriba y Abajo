@@ -11,12 +11,19 @@ void ejecutar() {
 
 void player () { 
   background(255,0,0);
-  ellipse(x,y,15,15);
+  ellipse(x,y,30,30);
 }
 void controles() {
   if (keyPressed && key=="up") {
-    y = y -1;}
+    y = y -3;}
   if (keyPressed && key=="down") {
-    y = y +1;}
+    y = y +3;}
+  if (keyPressed && key=="left") {
+    x = x -3;}
+  if (keyPressed && key=="right") {
+    x = x +3;}
+  if (y==0){
+    y=160;
+  }
 }
  

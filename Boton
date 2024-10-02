@@ -2,16 +2,24 @@ void main () {
   animate(ejecutar);
 }
 void ejecutar() {
-  dibuja2();
-  dibuja();
+  imagen();
+  control();
 }
-void dibuja() {   
-  if (mousePressed == true) {
-        image("https://img.freepik.com/vector-premium/boton-circulo-verde_1088810-261.jpg",90,90,150,150);
-    } else  { 
-    image("https://static.vecteezy.com/system/resources/thumbnails/009/385/104/small/button-pin-clipart-design-illustration-free-png.png",105,105,119,119);
-     }  }
-   void dibuja2() {
-     background(255,255,255);
-   }  
-  
+void imagen() {  
+  background(255,255,255);
+   image("https://static.vecteezy.com/system/resources/thumbnails/009/385/104/small/button-pin-clipart-design-illustration-free-png.png",105,105,119,119);
+  } 
+void control() { 
+  print("X: " +mouseX);
+  println("Y: " +mouseY);
+  if (mousePressed)
+  if (mouseX >120 && mouseX <200)
+    if (mouseY >120 && mouseY <200)
+    if(mousePressed) {
+    if(mouseButton == LEFTBUTTON){
+      background(255,255,255);
+       image("https://img.freepik.com/vector-premium/boton-circulo-verde_1088810-261.jpg",90,90,150,150);
+    }
+  }
+}
+   

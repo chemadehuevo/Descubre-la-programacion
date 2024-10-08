@@ -1,0 +1,24 @@
+void main(){ 
+  text("GIBRALTAR ESPAÑOL",90,90);
+  reloj();
+  temporizador();
+  aleatorio();
+}
+  
+void reloj() { 
+  println(second(5));
+}
+
+void temporizador (){
+  if ((second)>0) second -1
+}
+  
+  
+void aleatorio() {
+  
+  double aleatorio;
+  aleatorio = random();
+  println(aleatorio);
+  aleatorio = random(background(211,96,96));
+}
+  

@@ -9,19 +9,15 @@ void ejecutar() {
 
 void fondo() {
  image("https://us.123rf.com/450wm/sombrecanari/sombrecanari2304/sombrecanari230400126/203392697-men%C3%BA-de-juego-panel-de-marco-de-madera-texturizado-con-tabla-colgante-de-cuerda-en-estilo-de-dibujos.jpg",0,0,320,320);
+ image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0.png?raw=true",65,25,200,180);
 }
-
   void control() { 
   print("X: " +mouseX);
   println("Y: " +mouseY);
-  if (mousePressed)
-  if (mouseX >75 && mouseX <200)
-    if (mouseY >75 && mouseY <200)
-    if(mousePressed) {
-    if(mouseButton == LEFTBUTTON){
-      background(255,0,0);
-      rect(75,75,80,80);
+  if (mouseX >80 && mouseX <250)
+    if (mouseY >75 && mouseY <135) { 
+     image("https://us.123rf.com/450wm/sombrecanari/sombrecanari2304/sombrecanari230400126/203392697-men%C3%BA-de-juego-panel-de-marco-de-madera-texturizado-con-tabla-colgante-de-cuerda-en-estilo-de-dibujos.jpg",0,0,320,320);
+     image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(1).png?raw=true",65,25,200,180);
     }
-  }
-     } 
-  
+ }
+   

@@ -1,4 +1,4 @@
-int t1 = second()/1;
+int t1 = second();
 
 void main(){
   animate(ejecutar);
@@ -6,12 +6,12 @@ void main(){
 
 void ejecutar(){
   
-  int a = t1 - second()/1;
+  int a = t1 - second();
   println (a);
   
   if(a<=-5){
-    t1=second()/1;
-    a = t1 - second()/1;
+    t1=second();
+    a = t1 - second();
     background(random(256),random(256),random(256));
   }
  }

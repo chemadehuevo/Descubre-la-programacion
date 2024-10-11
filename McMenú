@@ -86,6 +86,23 @@ void fondo2() {
 
 void fondo3() {
   background(64,8,90);
+  rect(50,50,215,215);
+  fill(255,255,255);
+  text("AJUSTES",120,160);
+  fill(64,8,90);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(5).png?raw=true",-35,-37,120,120);
+   if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(6).png?raw=true",-35,-37,120,120);
+   if (mousePressed)
+  if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    if(mousePressed) {
+    if(mouseButton == LEFTBUTTON){
+      animate(ejecutar);
+    } } }
 
+void fondo4() {
+  
 }
 

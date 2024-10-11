@@ -13,6 +13,7 @@ void fondo() {
  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0.png?raw=true",65,25,200,180);
  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(1).png?raw=true",65,170,200,180);
  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(8).png?raw=true",-26,247,100,100);
+ image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(10).png?raw=true",-20,190,100,100);
 }
   void control() { 
   print("X: " +mouseX);
@@ -28,7 +29,11 @@ void fondo() {
    if (mouseX >6 && mouseX <45)
     if (mouseY >270 && mouseY <310) {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(9).png?raw=true",-26,247,100,100); 
-   }} 
+   }
+  if (mouseX >6 && mouseX <55)
+    if (mouseY >227 && mouseY <257) { 
+    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(11).png?raw=true",-20,190,100,100);
+   } }
 
 void play() {
    if (mousePressed)
@@ -51,6 +56,13 @@ void play() {
     if(mousePressed) {
     if(mouseButton == LEFTBUTTON){
       animate(fondo3);
+}  }
+  if (mousePressed)
+  if (mouseX >6 && mouseX <55)
+    if (mouseY >227 && mouseY <257)
+    if(mousePressed) {
+    if(mouseButton == LEFTBUTTON){
+      animate(fondo4);
 }  }  }
  
   void fondo1() {
@@ -103,6 +115,16 @@ void fondo3() {
     } } }
 
 void fondo4() {
-  
-}
+  background(0,78,215);
+image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(5).png?raw=true",-35,-37,120,120);
+   if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(6).png?raw=true",-35,-37,120,120);
+   if (mousePressed)
+  if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    if(mousePressed) {
+    if(mouseButton == LEFTBUTTON){
+      animate(ejecutar);
+    } } }
 

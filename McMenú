@@ -1,3 +1,6 @@
+int x= 160;
+int y= 160;
+
 void main() {
  animate (ejecutar);
 }
@@ -66,19 +69,14 @@ void play() {
 }  }  }
  
   void fondo1() {
-  background(255,255,255);
-  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(7).png?raw=true",0,0,320,320);
-  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(5).png?raw=true",-35,-37,120,120);
-   if (mouseX >5 && mouseX <40)
-    if (mouseY >5 && mouseY <40)
-    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(6).png?raw=true",-35,-37,120,120);
-   if (mousePressed)
+    animate (player);
+       if (mousePressed)
   if (mouseX >5 && mouseX <40)
     if (mouseY >5 && mouseY <40)
     if(mousePressed) {
     if(mouseButton == LEFTBUTTON){
-      animate(ejecutar);
-    } } }
+    animate(ejecutar);
+    }  } }
 
 void fondo2() {
   background(255,255,255);
@@ -128,3 +126,41 @@ image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN
       animate(ejecutar);
     } } }
 
+void name() {
+  
+}
+
+void player() {
+  background(255,255,255);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(5).png?raw=true",-35,-37,120,120);
+  image("https://w7.pngwing.com/pngs/480/187/png-transparent-pixel-game-among-us-pixel-art-pixelated-design-red-character-imposter-thumbnail.png",x,y,120,120);
+   controles();
+   if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(6).png?raw=true",-35,-37,120,120);
+    if (mousePressed)
+  if (mouseX >5 && mouseX <40)
+    if (mouseY >5 && mouseY <40)
+    if(mousePressed) {
+    if(mouseButton == LEFTBUTTON){
+      animate(ejecutar);
+    } } }
+
+void controles() {
+  if (keyPressed && key=="w") {
+    y = y -4;}
+  if (keyPressed && key=="s") {
+    y = y +4;}
+  if (keyPressed && key=="a") {
+    x = x -4;}
+  if (keyPressed && key=="d") {
+    x = x +4;}
+  if (y==0){
+    y=320;}
+  if (x==0){
+    x=320;}
+  if (y > 320){
+    y=0;}
+  if (x > 320){
+    x=0;}
+}

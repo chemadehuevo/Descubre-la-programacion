@@ -107,7 +107,7 @@ void name() {
 
 void player() {
   background(255,255,255);
- image("https://w7.pngwing.com/pngs/480/187/png-transparent-pixel-game-among-us-pixel-art-pixelated-design-red-character-imposter-thumbnail.png",x,y,120,120);
+ image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(12).png?raw=true",x,y,120,120);
   controles();
   salir();
 }
@@ -121,12 +121,12 @@ void controles() {
     x = x -4;}
   if (keyPressed && key=="d") {
     x = x +4;}
-  if (y==0){
+  if (y<-75){
     y=320;}
   if (x==0){
     x=320;}
   if (y > 320){
-    y=0;}
+    y=-70;}
   if (x > 320){
     x=0;}
 }

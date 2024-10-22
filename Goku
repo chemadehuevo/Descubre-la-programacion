@@ -1,0 +1,36 @@
+int x= 160;
+int y= 160;
+
+void main() {
+  ejecutar();
+}
+
+void ejecutar() {
+  animate(player);
+}
+
+void player() {
+  background(255,255,255);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(12).png?raw=true",x,y,120,120);
+  controles();
+}
+
+void controles() {
+  if (keyPressed && key=="w") {
+    y = y -4;}
+  if (keyPressed && key=="s") {
+    y = y +4;}
+  if (keyPressed && key=="a") {
+    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0.png?raw=true",x,y,120,120);
+    x = x -4;}
+  if (keyPressed && key=="d") {
+    x = x +4;}
+  if (y<-75){
+    y=320;}
+  if (x==0){
+    x=320;}
+  if (y > 320){
+    y=-70;}
+  if (x > 320){
+    x=0;}
+}

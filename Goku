@@ -21,6 +21,7 @@ void controles() {
   if (keyPressed && key=="s") {
     y = y +4;}
   if (keyPressed && key=="a") {
+    background(255,255,255);
     image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0.png?raw=true",x,y,120,120);
     x = x -4;}
   if (keyPressed && key=="d") {

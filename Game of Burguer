@@ -39,10 +39,17 @@ void controles() {
     y=235;}
   if (x > 250){
     x=250;}
+  if(x>-30 && x<10)
+    if(y>-30 && y<10)
+      if(keyPressed && key =="e"){
+      animate(tesoro);
+  }
 }
 
 void tesoro() {
+  background(20,237,58);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",100,100,30,30);
+  player();
 }
 
 void mapa() {
@@ -55,10 +62,3 @@ void mapa() {
   rect(42,180,140,15);
 }
 
-void cambio() {
-  
-}
-
-void tomate() {
-
-}

@@ -9,11 +9,15 @@ void main() {
 void ejecutar() {
   control();
   mapa();
-  player();
+  jugador();
 }
 
 void player() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(12).png?raw=true",x,y,90,90);
+}
+
+void jugador() {
+  player();
   controles();
 }
 
@@ -39,26 +43,41 @@ void controles() {
     y=235;}
   if (x > 250){
     x=250;}
-  if(x>-30 && x<10)
-    if(y>-30 && y<10)
-      if(keyPressed && key =="e"){
-      animate(tesoro);
-  }
 }
 
 void tesoro() {
   background(20,237,58);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",100,100,30,30);
-  player();
+  jugador();
 }
 
 void mapa() {
   background(13,255,238);
   fill(121,255,64);
   rect(20,20,30,30);
-  fill(243,179,110);
-  rect(27,50,15,145);
-  fill(243,179,110);
-  rect(42,180,140,15);
+  if(x>-30 && x<10)
+    if(y>-30 && y<10) { 
+    fill(253,2,2);
+    text("Are you sure?",110,150);
+    text("NO",190,50);
+    text("+Escape",180,80);
+    fill(2,118,0);
+    text("YES",100,50);
+    text("+Enter",90,80);
+  }
+   if(x>-30 && x<10)
+    if(y>-30 && y<10)
+  if(keyPressed && key =="Enter"){
+      animate(level1);
+  }
+  if(x>-30 && x<10)
+    if(y>-30 && y<10)
+  if(keyPressed && key =="Escape"){
+      animate(mapa);
+  }
 }
 
+void level1() {
+  background(232,239,58);
+  jugador();
+}

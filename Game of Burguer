@@ -32,14 +32,14 @@ void controles() {
     x = x -6;}
   if (keyPressed && key=="d") {
     x = x +6;}
-  if (y<-50){
-    y=-50;}
-  if (x<-50){
-    x=-50;}
-  if (y > 235){
-    y=235;}
-  if (x > 250){
-    x=250;}
+  if (y<0){
+    y=0;}
+  if (x<0){
+    x=0;}
+  if (y > 320){
+    y=320;}
+  if (x > 320){
+    x=320;}
 }
 
 void tesoro() {
@@ -75,6 +75,7 @@ void mapa() {
 void level1() {
   background(232,239,58);
   jugador();
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(19).png?raw=true",270,270,25,25);
   if (keyPressed && key=="Escape") {
     animate(mapa); }
 }

@@ -9,7 +9,6 @@ void main() {
 void ejecutar() {
   control();
   mapa();
-  jugador();
 }
 
 
@@ -53,15 +52,16 @@ void mapa() {
   background(13,255,238);
   fill(121,255,64);
   rect(20,20,30,30);
-   if(x>18 && x<60 && y>17 && y<62) { 
+  jugador();
+  if(x>18 && x<60 && y>17 && y<62) { 
     fill(253,2,2);
     text("Are you sure?",110,150);
     text("NO",190,50);
     text("+Escape",180,80);
     fill(2,118,0);
     text("YES",100,50);
-    text("+Enter",90,80);
-  }
+    text("+Enter",90,80); 
+   }
    if(x>18 && x<60 && y>17 && y<62)
   if(keyPressed && key =="Enter"){
       animate(level1);
@@ -75,4 +75,6 @@ void mapa() {
 void level1() {
   background(232,239,58);
   jugador();
+  if (keyPressed && key=="Escape") {
+    animate(mapa); }
 }

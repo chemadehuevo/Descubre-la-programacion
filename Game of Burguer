@@ -74,8 +74,27 @@ void mapa() {
 
 void level1() {
   background(232,239,58);
-  jugador();
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(19).png?raw=true",270,270,25,25);
+  jugador();  
   if (keyPressed && key=="Escape") {
     animate(mapa); }
+  if(x>260 && x<300 && y>260 && y<300) {
+   fill(0,0,0);
+    rect(230,265,30,30);
+   fill(255,255,255);
+    text("E",238,285);
+  }
+  if(x>260 && x<300 && y>260 && y<300)
+  if(keyPressed && key =="e") {
+    animate(level2);
+  }
 }
+
+void level2() {
+  background(0,225,39);
+  jugador();
+  if (x>260 && x<300 && y>260 && y<300){
+    x=30; y=30;}
+ 
+}
+

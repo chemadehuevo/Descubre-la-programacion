@@ -42,7 +42,7 @@ void controles() {
 
 void enemigo()  {
   fill(255,255,255);
-  ellipse(x,90,30,30);   
+  ellipse(x,105,30,30);    
 }
 
 void tesoro() {
@@ -75,6 +75,11 @@ void mapa() {
   }
 }
 
+void muerte(){
+  background(0,0,0);
+  text("YOU DIE",50,50);
+}
+
 void level1() {
   background(232,239,58);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(19).png?raw=true",270,270,25,25);
@@ -94,10 +99,13 @@ void level1() {
 }
 
 void level2() {
+  control();
   background(0,225,39);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(20).png?raw=true",20,20,30,30);
   jugador();
+  rect(0,120,320,10);
+  if(x>0 && x<320 && y>100 && y<130){
+    x=150; y=220;  }
 }
 
-
-
+    

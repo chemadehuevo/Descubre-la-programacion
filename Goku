@@ -1,5 +1,5 @@
-int x= 160;
-int y= 160;
+int x= 140;
+int y= 140;
 
 void main() {
  animate (ejecutar);
@@ -39,13 +39,18 @@ void fondo() {
     image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(11).png?raw=true",-20,190,100,100);
    } }
 
+void jugador() {
+  fill(243,75,22);
+  ellipse(x,y,25,25);
+  controles(); 
+
 void play() {
    if (mousePressed)
   if (mouseX >82 && mouseX <250)
     if (mouseY >80 && mouseY <135)
     if(mousePressed) {
     if(mouseButton == LEFTBUTTON){
-      animate(fondo1);
+      animate(mapa);
     } } 
   if (mousePressed)
   if (mouseX >82 && mouseX <250)
@@ -105,13 +110,6 @@ void name() {
   
 }
 
-void player() {
-  background(255,255,255);
- image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(12).png?raw=true",x,y,120,120);
-  controles();
-  salir();
-}
-
 void controles() {
   if (keyPressed && key=="w") {
     y = y -4;}
@@ -130,16 +128,85 @@ void controles() {
   if (x > 320){
     x=0;}
 }
+void enemigo()  {  
+  fill(255,255,255);
+  ellipse(20,120,30,30);    
+}
 
-void salir(){
-    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(5).png?raw=true",-35,-37,120,120);
-  if (mouseX >5 && mouseX <40)
-    if (mouseY >5 && mouseY <40)
-    image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(6).png?raw=true",-35,-37,120,120);
-    if (mousePressed)
-  if (mouseX >5 && mouseX <40)
-    if (mouseY >5 && mouseY <40)
-    if(mousePressed) {
-    if(mouseButton == RIGHTBUTTON){
-      animate(ejecutar);
-    } } }
+void tesoro() {
+  background(20,237,58);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",100,100,30,30);
+  jugador();
+}
+
+void mapa() {
+  background(13,255,238);
+  fill(121,255,64);
+  rect(20,20,30,30);
+  jugador();
+  if(x>18 && x<60 && y>17 && y<62) { 
+    fill(253,2,2);
+    text("Are you sure?",110,150);
+    text("NO",190,50);
+    text("+Escape",180,80);
+    fill(2,118,0);
+    text("YES",100,50);
+    text("+Enter",90,80); 
+   }
+   if(x>18 && x<60 && y>17 && y<62)
+  if(keyPressed && key =="Enter"){
+      animate(level1);
+  }
+  if(x>18 && x<60 && y>17 && y<62)
+  if(keyPressed && key =="Escape"){
+      animate(mapa);
+  }
+}
+
+void muerte(){
+  background(0,0,0);
+  text("YOU DIE",50,50);
+}
+
+void level1() {
+  background(232,239,58);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(19).png?raw=true",270,270,25,25);
+  jugador();  
+  if (keyPressed && key=="Escape") {
+    animate(mapa); }
+  if(x>260 && x<300 && y>260 && y<300) {
+   fill(0,0,0);
+    rect(230,265,30,30);
+   fill(255,255,255);
+    text("E",238,285);
+  }
+  if(x>260 && x<300 && y>260 && y<300)
+  if(keyPressed && key =="e") {
+    animate(level2);
+  }
+}
+
+void level2() {
+  control();
+  background(0,225,39);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(20).png?raw=true",20,20,30,30);
+  jugador();
+  rect(0,120,320,10);
+  if(x>0 && x<320 && y>100 && y<130){
+    x=150; y=220;  }
+  if(x>18 && x<60 && y>19 && y<62) {
+   fill(0,0,0);
+    rect(70,20,30,30);
+   fill(255,255,255);
+    text("E",80,42); }
+  if(x>18 && x<60 && y>19 && y<62)
+  if(keyPressed && key =="e") {
+    animate(level3);  }
+}
+
+void level3() {
+  background(237,133,236);
+  jugador();
+}
+    
+

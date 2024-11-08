@@ -40,9 +40,9 @@ void controles() {
     x=320;}
 }
 
-void enemigo()  {
+void enemigo()  {  
   fill(255,255,255);
-  ellipse(x,105,30,30);    
+  ellipse(20,120,30,30);    
 }
 
 void tesoro() {
@@ -106,6 +106,18 @@ void level2() {
   rect(0,120,320,10);
   if(x>0 && x<320 && y>100 && y<130){
     x=150; y=220;  }
+  if(x>18 && x<60 && y>19 && y<62) {
+   fill(0,0,0);
+    rect(70,20,30,30);
+   fill(255,255,255);
+    text("E",80,42); }
+  if(x>18 && x<60 && y>19 && y<62)
+  if(keyPressed && key =="e") {
+    animate(level3);  }
 }
 
+void level3() {
+  background(237,133,236);
+  jugador();
+}
     

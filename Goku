@@ -75,12 +75,14 @@ void play() {
 }  }  }
 
 void fondo2() {
+  salir();
   background(255,255,255);
   text("By Chema De Huevo",75,140);
   fill(0,0,0); 
 }
 
 void fondo3() {
+  salir();
   background(255,255,255);
   text("Seleccionar: LeftButton",70,140);
   fill(84,14,116);
@@ -89,6 +91,7 @@ void fondo3() {
   }
 
 void fondo4() {
+  salir();
   background(0,78,215);
   text("rancking",60,60);
  }
@@ -106,18 +109,35 @@ void controles() {
     x = x -6;}
   if (keyPressed && key=="d") {
     x = x +6;}
-  if (y<-75){
-    y=320;}
-  if (x==0){
-    x=320;}
-  if (y > 320){
-    y=-70;}
-  if (x > 320){
+  if (y<0){
+    y=0;}
+  if (x<0){
     x=0;}
+  if (y > 320){
+    y=320;}
+  if (x > 320){
+    x=320;}
 }
 void enemigo()  {  
+int a=20; 
   fill(255,255,255);
-  ellipse(20,120,30,30);    
+  ellipse(a,120,30,30);  
+  if(x>0 && x<320) {
+    a= a+20;}
+}
+
+void salir() {
+  if (keyPressed && key=="Escape") {
+     animate(ejecutar); }
+}
+
+void volver() {
+  if (keyPressed && key=="Escape") {
+   animate(sure);  }
+}
+
+void sure() {
+  background(0,0,0);
 }
 
 void tesoro() {
@@ -127,6 +147,7 @@ void tesoro() {
 }
 
 void mapa() {
+  volver();
   background(13,255,238);
   fill(121,255,64);
   rect(20,20,30,30);
@@ -156,6 +177,7 @@ void muerte(){
 }
 
 void level1() {
+  volver();
   background(232,239,58);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(19).png?raw=true",270,270,25,25);
   jugador();  
@@ -174,6 +196,7 @@ void level1() {
 }
 
 void level2() {
+  volver();
   control();
   background(0,225,39);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(20).png?raw=true",20,20,30,30);
@@ -192,6 +215,7 @@ void level2() {
 }
 
 void level3() {
+  volver();
   background(237,133,236);
   jugador();
 }

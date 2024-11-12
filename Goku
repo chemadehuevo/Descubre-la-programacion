@@ -1,6 +1,10 @@
 int x= 140;
 int y= 140;
-
+int eneX = 10;
+int eneY = 120;
+int posE= eneX + eneY;
+int posJ= x+y;
+  
 void main() {
  animate (ejecutar);
 }
@@ -119,11 +123,16 @@ void controles() {
     x=320;}
 }
 void enemigo()  {  
-int a=20; 
   fill(255,255,255);
-  ellipse(a,120,30,30);  
-  if(x>0 && x<320) {
-    a= a+20;}
+  ellipse(eneX,eneY,30,30);  
+  if (eneX >0 && eneY ==120) {
+   eneX = eneX +15; }
+  if (eneX >320) {
+   eneX= eneX -16; eneY =121; }
+  if (eneX<320 && eneY== 121){
+   eneX= eneX -15; }
+  if (eneX<0 && eneY== 121){
+   eneX= 1; eneY= 120;}
 }
 
 void salir() {
@@ -218,5 +227,6 @@ void level3() {
   volver();
   background(237,133,236);
   jugador();
+  enemigo();
 }
     

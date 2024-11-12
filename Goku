@@ -100,8 +100,9 @@ void fondo4() {
   text("rancking",60,60);
  }
 
-void name() {
-  
+void carajo() {
+  if () {
+    animate(muerte);  }
 }
 
 void controles() {
@@ -123,14 +124,15 @@ void controles() {
     x=320;}
 }
 void enemigo()  {  
+  carajo();
   fill(255,255,255);
   ellipse(eneX,eneY,30,30);  
   if (eneX >0 && eneY ==120) {
-   eneX = eneX +15; }
+   eneX = eneX +5; }
   if (eneX >320) {
-   eneX= eneX -16; eneY =121; }
+   eneX= eneX -6; eneY =121; }
   if (eneX<320 && eneY== 121){
-   eneX= eneX -15; }
+   eneX= eneX -5; }
   if (eneX<0 && eneY== 121){
    eneX= 1; eneY= 120;}
 }

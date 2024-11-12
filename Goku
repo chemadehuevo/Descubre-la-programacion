@@ -1,9 +1,7 @@
 int x= 140;
 int y= 140;
-int eneX = 10;
+int eneX = 5;
 int eneY = 120;
-int posE= eneX + eneY;
-int posJ= x+y;
   
 void main() {
  animate (ejecutar);
@@ -101,19 +99,19 @@ void fondo4() {
  }
 
 void carajo() {
-  if () {
+  if (x>eneX && y>eneY){
     animate(muerte);  }
 }
 
 void controles() {
   if (keyPressed && key=="w") {
-    y = y -6;}
+    y = y -5;}
   if (keyPressed && key=="s") {
-    y = y +6;}
+    y = y +5;}
   if (keyPressed && key=="a") {
-    x = x -6;}
+    x = x -5;}
   if (keyPressed && key=="d") {
-    x = x +6;}
+    x = x +5;}
   if (y<0){
     y=0;}
   if (x<0){
@@ -126,15 +124,17 @@ void controles() {
 void enemigo()  {  
   carajo();
   fill(255,255,255);
-  ellipse(eneX,eneY,30,30);  
+  ellipse(eneX,eneY,20,20); 
+  ellipse(eneX,eneY+40,20,20);
+  ellipse(eneX,eneY+80,20,20);
   if (eneX >0 && eneY ==120) {
-   eneX = eneX +5; }
+   eneX = eneX +6; }
   if (eneX >320) {
-   eneX= eneX -6; eneY =121; }
+   eneX= eneX -5; eneY =121; }
   if (eneX<320 && eneY== 121){
    eneX= eneX -5; }
   if (eneX<0 && eneY== 121){
-   eneX= 1; eneY= 120;}
+   eneX= 5; eneY= 120;}
 }
 
 void salir() {

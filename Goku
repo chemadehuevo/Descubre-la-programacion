@@ -2,6 +2,8 @@ int x= 140;
 int y= 140;
 int eneX = 5;
 int eneY = 120;
+int ene2Y= 160;
+int ene3Y= 200;
   
 void main() {
  animate (ejecutar);
@@ -101,6 +103,10 @@ void fondo4() {
 void carajo() {
   if (x+20>eneX && x-20<eneX && y+20>eneY && y-20<eneY){
     animate(muerte);  }
+  if (x+20>eneX && x-20<eneX && y+20>ene2Y && y-20<ene2Y){
+    animate(muerte);  }
+  if (x+20>eneX && x-20<eneX && y+20>ene3Y && y-20<ene3Y){
+    animate(muerte);  }
 }
 
 void controles() {
@@ -116,21 +122,23 @@ void controles() {
     y=0;}
   if (x<0){
     x=0;}
-  if (y > 320){
-    y=320;}
-  if (x > 320){
-    x=320;}
+  if (y > 294){
+    y=294;}
+  if (x > 294){
+    x=294;}
 }
 void enemigo()  {  
   carajo();
   fill(255,255,255);
   rect(eneX,eneY,20,20); 
+  rect(eneX,ene2Y,20,20);
+  rect(eneX,ene3Y,20,20);
   if (eneX >0 && eneY ==120) {
-   eneX = eneX +11; }
+   eneX = eneX +21; }
   if (eneX >320) {
-   eneX= eneX -10; eneY =121; }
+   eneX= eneX -20; eneY =121; }
   if (eneX<320 && eneY== 121){
-   eneX= eneX -10; }
+   eneX= eneX -20; }
   if (eneX<0 && eneY== 121){
    eneX= 5; eneY= 120;}
 }
@@ -161,7 +169,7 @@ void mapa() {
   fill(121,255,64);
   rect(20,20,30,30);
   jugador();
-  if(x>18 && x<60 && y>17 && y<62) { 
+  if(x>8 && x<50 && y>7 && y<52) { 
     fill(253,2,2);
     text("Are you sure?",110,150);
     text("NO",190,50);
@@ -170,7 +178,7 @@ void mapa() {
     text("YES",100,50);
     text("+Enter",90,80); 
    }
-   if(x>18 && x<60 && y>17 && y<62)
+   if(x>8 && x<50 && y>7 && y<52)
   if(keyPressed && key =="Enter"){
       animate(level1);
   }
@@ -183,6 +191,9 @@ void mapa() {
 void muerte(){
   background(0,0,0);
   text("YOU DIE",50,50);
+   if (keyPressed && key=="Enter") {
+   animate(mapa);  }
+  
 }
 
 void level1() {
@@ -213,12 +224,12 @@ void level2() {
   rect(0,120,320,10);
   if(x>0 && x<320 && y>100 && y<130){
     x=150; y=220;  }
-  if(x>18 && x<60 && y>19 && y<62) {
+  if(x>8 && x<50 && y>9 && y<52) {
    fill(0,0,0);
     rect(70,20,30,30);
    fill(255,255,255);
     text("E",80,42); }
-  if(x>18 && x<60 && y>19 && y<62)
+  if(x>8 && x<50 && y>9 && y<52)
   if(keyPressed && key =="e") {
     animate(level3);  }
 }

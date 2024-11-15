@@ -254,10 +254,24 @@ void level2() {
 void level3() {
   volver();
   background(237,133,236);
-  jugador();
   enemigo();
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(21).png?raw=true",230,20,30,30);
+  jugador();
   rect(160,0,10,250);
   if(x>140 && x<168 && y<255){
     x=20; y=20;  }
+  if(x>220 && x<250 && y>10 && y<40)
+  if (keyPressed && key=="e"){
+    animate(level4);  }
+  if(x>220 && x<250 && y>10 && y<50) {
+   fill(0,0,0);
+    rect(70,20,30,30);
+   fill(255,255,255);
+    text("E",80,42); }
+}
+
+void level4() {
+  background(245,255,0);
+  jugador();
 }
     

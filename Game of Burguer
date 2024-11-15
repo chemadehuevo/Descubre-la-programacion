@@ -209,9 +209,8 @@ void mapa() {
 void muerte(){
   background(0,0,0);
   text("YOU DIE",50,50);
-   if (keyPressed && key=="Enter") {
-   animate(mapa);  }
-  
+   if (keyPressed && key=="Enter") {     
+       x=150; y=150; animate(mapa); } 
 }
 
 void level1() {
@@ -257,5 +256,8 @@ void level3() {
   background(237,133,236);
   jugador();
   enemigo();
+  rect(160,0,10,250);
+  if(x>140 && x<168 && y<255){
+    x=20; y=20;  }
 }
     

@@ -114,22 +114,14 @@ void carajo() {
 }
 
 void controles() {
-  if (keyPressed && key=="w") {
-    y = y -5;}
-  if (keyPressed && key=="s") {
-    y = y +5;}
-  if (keyPressed && key=="a") {
-    x = x -5;}
-  if (keyPressed && key=="d") {
-    x = x +5;}
-  if (y<0){
-    y=0;}
-  if (x<0){
-    x=0;}
-  if (y > 300){
-    y=300;}
-  if (x > 300){
-    x=300;}
+  if (keyPressed && key=="w") { y = y -5;}
+  if (keyPressed && key=="s") { y = y +5;}
+  if (keyPressed && key=="a") { x = x -5;}
+  if (keyPressed && key=="d") { x = x +5;}
+  if (y<0){ y=0;}
+  if (x<0){ x=0;}
+  if (y > 300){ y=300;}
+  if (x > 300){ x=300;}
 }
 void enemigo()  {  
   carajo();
@@ -137,30 +129,18 @@ void enemigo()  {
   rect(eneX,eneY,20,20); 
   rect(ene2X,ene2Y,20,20);
   rect(ene3X,ene3Y,20,20);
-  if (eneX >0 && eneY ==120) {
-   eneX = eneX +21; }
-  if (eneX >320) {
-   eneX= eneX -20; eneY =121; }
-  if (eneX<320 && eneY== 121){
-   eneX= eneX -20; }
-  if (eneX<0 && eneY== 121){
-   eneX= 5; eneY= 120;}
-  if (ene2X >0 && ene2Y ==160) {
-   ene2X = ene2X +21; }
-  if (ene2X >320) {
-   ene2X= ene2X -20; ene2Y =161; }
-  if (ene2X<320 && ene2Y== 161){
-   ene2X= ene2X -20; }
-  if (ene2X<0 && ene2Y== 161){
-   ene2X= 5; ene2Y= 160;}
-  if (ene3X >0 && ene3Y ==200) {
-   ene3X = ene3X +21; }
-  if (ene3X >320) {
-   ene3X= ene3X -20; ene3Y =201; }
-  if (ene3X<320 && ene3Y== 201){
-   ene3X= ene3X -20; }
-  if (ene3X<0 && ene3Y== 201){
-   ene3X= 5; ene3Y= 200;}
+  if (eneX >0 && eneY ==120) { eneX = eneX +21; }
+  if (eneX >320) { eneX= eneX -20; eneY =121; }
+  if (eneX<320 && eneY== 121){ eneX= eneX -20; }
+  if (eneX<0 && eneY== 121){ eneX= 5; eneY= 120;}
+  if (ene2X >0 && ene2Y ==160) { ene2X = ene2X +21; }
+  if (ene2X >320) { ene2X= ene2X -20; ene2Y =161; }
+  if (ene2X<320 && ene2Y== 161){ ene2X= ene2X -20; }
+  if (ene2X<0 && ene2Y== 161) { ene2X= 5; ene2Y= 160;}
+  if (ene3X >0 && ene3Y ==200) { ene3X = ene3X +21; }
+  if (ene3X >320) { ene3X= ene3X -20; ene3Y =201; }
+  if (ene3X<320 && ene3Y== 201){ ene3X= ene3X -20; }
+  if (ene3X<0 && ene3Y== 201){ ene3X= 5; ene3Y= 200;}
 }
 
 void salir() {
@@ -274,6 +254,7 @@ void level3() {
 
 void ketchup(){
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(22).png?raw=true",240,200,20,40);
+  if (x>225 && x<265 && y>180 && y<220) { animate(level5);}
 }
 
 void caja() {
@@ -284,6 +265,10 @@ void caja() {
   if (x+15>cajX && x-15==cajX && y+15>cajY && y-15<cajY) {cajX= cajX-5; }
   if (x+15==cajX && x-15<cajX && y+15>cajY && y-15<cajY) {cajX= cajX+5; }
   if (cajX>10 && cajX<50 && cajY>40 && cajY<80){ ketchup();  }
+  if (cajY<0){ cajY=0;}
+  if (cajX<0){ cajX=0;}
+  if (cajY > 300){ cajY=300;}
+  if (cajX > 300){ cajX=300;}
 }
 
 void level4() {
@@ -294,5 +279,10 @@ void level4() {
   caja();
   if (x>10 && x<50 && y>40 && y<80){
     ketchup();  }  
+}
+
+void level5() {
+  background(255,255,255);
+  jugador();
 }
     

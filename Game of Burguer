@@ -6,6 +6,8 @@ int ene2Y= 160;
 int ene3Y= 200;
 int ene2X= 120;
 int ene3X= 230;
+int cajX=30;
+int cajY=220;
   
 void main() {
  animate (ejecutar);
@@ -47,7 +49,7 @@ void fondo() {
 
 void jugador() {
   fill(243,75,22);
-  rect(x,y,25,25);
+  rect(x,y,20,20);
   controles(); 
  }
 void play() {
@@ -124,10 +126,10 @@ void controles() {
     y=0;}
   if (x<0){
     x=0;}
-  if (y > 294){
-    y=294;}
-  if (x > 294){
-    x=294;}
+  if (y > 300){
+    y=300;}
+  if (x > 300){
+    x=300;}
 }
 void enemigo()  {  
   carajo();
@@ -261,17 +263,36 @@ void level3() {
   if(x>140 && x<168 && y<255){
     x=20; y=20;  }
   if(x>220 && x<250 && y>10 && y<40)
-  if (keyPressed && key=="e"){
+  if (keyPressed && key=="e"){ x=200; y=30;
     animate(level4);  }
-  if(x>220 && x<250 && y>10 && y<50) {
+  if(x>220 && x<250 && y>10 && y<50) { 
    fill(0,0,0);
     rect(70,20,30,30);
    fill(255,255,255);
     text("E",80,42); }
 }
 
+void ketchup(){
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(22).png?raw=true",240,200,20,40);
+}
+
+void caja() {
+  fill(0,0,0);
+  rect(cajX,cajY,20,20);
+  if (x+15>cajX && x-15<cajX && y+15>cajY && y-15==cajY) {cajY= cajY-5; }
+  if (x+15>cajX && x-15<cajX && y+15==cajY && y-15<cajY) {cajY= cajY+5; }
+  if (x+15>cajX && x-15==cajX && y+15>cajY && y-15<cajY) {cajX= cajX-5; }
+  if (x+15==cajX && x-15<cajX && y+15>cajY && y-15<cajY) {cajX= cajX+5; }
+  if (cajX>10 && cajX<50 && cajY>40 && cajY<80){ ketchup();  }
+}
+
 void level4() {
   background(245,255,0);
+  fill(15,237,0);
+  rect(30,60,30,30);
   jugador();
+  caja();
+  if (x>10 && x<50 && y>40 && y<80){
+    ketchup();  }  
 }
     

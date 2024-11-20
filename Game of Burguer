@@ -10,6 +10,7 @@ int cajX=30;
 int cajY=220;
 int panY=0;
 int panX=120;
+int invX=random(320);
   
 void main() {
  animate (ejecutar);
@@ -114,6 +115,10 @@ void carajo() {
   if (x+20>ene3X && x-20<ene3X && y+20>ene3Y && y-20<ene3Y){
     animate(muerte);  }
 }
+void carajo2() {
+  if (x+20>panX && x-20<panX && y+20>panY && y-20<panY){
+    animate(muerte);  }
+}
 
 void controles() {
   if (keyPressed && key=="w") { y = y -5;}
@@ -189,6 +194,7 @@ void mapa() {
       animate(mapa);
   }
 }
+
 
 void muerte(){
   background(0,0,0);
@@ -285,14 +291,20 @@ void level4() {
 
 void pan() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(23).png?raw=true",panX,panY,20,20);
+  carajo2();
+  fill(210,217,36);
+  rect(invX,0,20,20);
+  if (panY>=0){ panY= panY+10; }
+  if (panY>=0) { panX= invX; }
+  if (panY ==320) { panY=0; invX= random(320); }
 }
 
 void level5() {
   background(210,217,36);
   jugador();
-  if (keyPressed && key=="s") { y = y -5;}
-  if (keyPressed && key=="w") { y = y +5;}
-  if (keyPressed && key=="d") { x = x -5;}
-  if (keyPressed && key=="a") { x = x +5;}
+  pan();
+  if (keyPressed && key=="s") { y = y -10;}
+  if (keyPressed && key=="w") { y = y +10;}
+  if (keyPressed && key=="d") { x = x -10;}
+  if (keyPressed && key=="a") { x = x +10;}
 }
-

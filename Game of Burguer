@@ -64,7 +64,7 @@ void carajo() {
 void carajo2() {
   if (x+20>panX && x-20<panX && y+20>panY && y-20<panY){
     score= score+2; panY=0; invX= random(320); }
-  if (score==10){ animate(level6); }
+  if (score==10){ animate(level6); } if (score==-5){ animate(muerte); }
 }
 
 void controles() {

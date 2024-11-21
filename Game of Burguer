@@ -1,28 +1,11 @@
-int x= 140;
-int y= 140;
-int eneX = 5;
-int eneY = 120;
-int ene2Y= 160;
-int ene3Y= 200;
-int ene2X= 120;
-int ene3X= 230;
-int cajX=30;
-int cajY=220;
-int panY=0;
-int panX=120;
-int invX=random(320);
-int score;
+int x= 140;int y= 140;int eneX = 5;int eneY = 120;int ene2Y= 160;
+int ene3Y= 200;int ene2X= 120;int ene3X= 230;int cajX=30;int cajY=220;
+int panY=0;int panX=120;int invX=random(320);int score;
   
 void main() {
- animate (ejecutar);
-}
+ animate (ejecutar); }
 
-void ejecutar() {
-  fondo();
-  control();
-  play();
-}
-
+void ejecutar() {  fondo(); control(); play();}
 
 void fondo() {
  image("https://us.123rf.com/450wm/sombrecanari/sombrecanari2304/sombrecanari230400126/203392697-men%C3%BA-de-juego-panel-de-marco-de-madera-texturizado-con-tabla-colgante-de-cuerda-en-estilo-de-dibujos.jpg",0,0,320,320);
@@ -31,82 +14,44 @@ void fondo() {
  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(8).png?raw=true",-26,247,100,100);
  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(10).png?raw=true",-20,190,100,100);
 }
-  void control() { 
-  print("X: " +mouseX);
-  println("Y: " +mouseY);
-  if (mouseX >82 && mouseX <250)
-    if (mouseY >80 && mouseY <135) { 
+  void control() {  print("X: " +mouseX); println("Y: " +mouseY);
+  if (mouseX >82 && mouseX <250) if (mouseY >80 && mouseY <135) { 
     image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(3).png?raw=true",65,25,200,180);
   }
-  if (mouseX >80 && mouseX <250)
-    if (mouseY >225 && mouseY <275) { 
+  if (mouseX >80 && mouseX <250) if (mouseY >225 && mouseY <275) { 
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(2).png?raw=true",65,170,200,180);
     }
-   if (mouseX >6 && mouseX <45)
-    if (mouseY >270 && mouseY <310) {
+   if (mouseX >6 && mouseX <45) if (mouseY >270 && mouseY <310) {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(9).png?raw=true",-26,247,100,100); 
    }
-  if (mouseX >6 && mouseX <55)
-    if (mouseY >227 && mouseY <257) { 
+  if (mouseX >6 && mouseX <55) if (mouseY >227 && mouseY <257) { 
     image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(11).png?raw=true",-20,190,100,100);
    } }
 
-void jugador() {
-  fill(243,75,22);
-  rect(x,y,20,20);
-  controles(); 
+void jugador() {  fill(243,75,22); rect(x,y,20,20); controles(); 
  }
-void play() {
-   if (mousePressed)
-  if (mouseX >82 && mouseX <250)
-    if (mouseY >80 && mouseY <135)
-    if(mousePressed) {
-    if(mouseButton == LEFTBUTTON){
-      animate(mapa);
+
+void play() {  if (mousePressed)  if (mouseX >82 && mouseX <250)
+  if (mouseY >80 && mouseY <135)  if(mousePressed) {  if(mouseButton == LEFTBUTTON){ animate(mapa);
     } } 
-  if (mousePressed)
-  if (mouseX >82 && mouseX <250)
-    if (mouseY >225 && mouseY <275)
-    if(mousePressed) {
-    if(mouseButton == LEFTBUTTON){
-      animate(fondo2);
+  if (mousePressed) if (mouseX >82 && mouseX <250) if (mouseY >225 && mouseY <275)
+    if(mousePressed) { if(mouseButton == LEFTBUTTON){  animate(fondo2);
 }  }  
-  if (mousePressed)
-  if (mouseX >6 && mouseX <45)
-    if (mouseY >270 && mouseY <310)
-    if(mousePressed) {
-    if(mouseButton == LEFTBUTTON){
-      animate(fondo3);
+  if (mousePressed) if (mouseX >6 && mouseX <45) if (mouseY >270 && mouseY <310)
+    if(mousePressed) {  if(mouseButton == LEFTBUTTON){ animate(fondo3);
 }  }
-  if (mousePressed)
-  if (mouseX >6 && mouseX <55)
-    if (mouseY >227 && mouseY <257)
-    if(mousePressed) {
-    if(mouseButton == LEFTBUTTON){
-      animate(fondo4);
+  if (mousePressed) if (mouseX >6 && mouseX <55) if (mouseY >227 && mouseY <257)
+    if(mousePressed) { if(mouseButton == LEFTBUTTON){ animate(fondo4);
 }  }  }
 
-void fondo2() {
-  salir();
-  background(255,255,255);
-  text("By Chema De Huevo",75,140);
-  fill(0,0,0); 
+void fondo2() { salir(); background(255,255,255);
+  text("By Chema De Huevo",75,140); fill(0,0,0); 
 }
 
-void fondo3() {
-  salir();
-  background(255,255,255);
-  text("Seleccionar: LeftButton",70,140);
-  fill(84,14,116);
-  text("Salir: RightButton",90,170);
-  fill(84,14,116);
-  }
+void fondo3() {salir(); background(255,255,255); text("Seleccionar: LeftButton",70,140);
+  fill(84,14,116); text("Salir: RightButton",90,170); fill(84,14,116); }
 
-void fondo4() {
-  salir();
-  background(0,78,215);
-  text("rancking",60,60);
- }
+void fondo4() { salir(); background(0,78,215); text("rancking",60,60); }
 
 void carajo() {
   if (x+20>eneX && x-20<eneX && y+20>eneY && y-20<eneY){
@@ -212,59 +157,40 @@ void level1() {
    fill(0,0,0);
     rect(230,265,30,30);
    fill(255,255,255);
-    text("E",238,285);
-  }
+    text("E",238,285); }
   if(x>260 && x<300 && y>260 && y<300)
-  if(keyPressed && key =="e") {
-    animate(level2); }
-}
+  if(keyPressed && key =="e") {  animate(level2); } }
 
 void level2() {
-  volver();
-  control();
+  volver(); control();
   background(0,225,39);
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(20).png?raw=true",20,20,30,30);
   jugador();
   rect(0,120,320,10);
-  if(x>0 && x<320 && y>100 && y<130){
-    x=150; y=220;  }
+  if(x>0 && x<320 && y>100 && y<130){ x=150; y=220;  }
   if(x>8 && x<50 && y>9 && y<52) {
-   fill(0,0,0);
-    rect(70,20,30,30);
-   fill(255,255,255);
-    text("E",80,42); }
+   fill(0,0,0); rect(70,20,30,30);
+   fill(255,255,255); text("E",80,42); }
   if(x>8 && x<50 && y>9 && y<52)
-  if(keyPressed && key =="e") {
-    animate(level3);  }
+  if(keyPressed && key =="e") { animate(level3);  }
 }
 
-void level3() {
-  volver();
-  background(237,133,236);
-  enemigo();
+void level3() { volver(); background(237,133,236); enemigo();
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(21).png?raw=true",230,20,30,30);
-  jugador();
-  rect(160,0,10,250);
-  if(x>140 && x<168 && y<255){
-    x=20; y=20;  }
+  jugador(); rect(160,0,10,250);
+  if(x>140 && x<168 && y<255){ x=20; y=20;  }
   if(x>220 && x<250 && y>10 && y<40)
-  if (keyPressed && key=="e"){ x=200; y=30;
-    animate(level4);  }
+  if (keyPressed && key=="e"){ x=200; y=30; animate(level4);  }
   if(x>220 && x<250 && y>10 && y<50) { 
-   fill(0,0,0);
-    rect(70,20,30,30);
-   fill(255,255,255);
-    text("E",80,42); }
-}
+   fill(0,0,0); rect(70,20,30,30);
+   fill(255,255,255); text("E",80,42); } }
 
 void ketchup(){
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(22).png?raw=true",240,240,20,40);
   if (x>225 && x<265 && y>220 && y<260) { animate(level5);}
 }
 
-void caja() {
-  fill(0,0,0);
-  rect(cajX,cajY,20,20);
+void caja() { fill(0,0,0); rect(cajX,cajY,20,20);
   if (x+15>cajX && x-15<cajX && y+15>cajY && y-15==cajY) {cajY= cajY-5; }
   if (x+15>cajX && x-15<cajX && y+15==cajY && y-15<cajY) {cajY= cajY+5; }
   if (x+15>cajX && x-15==cajX && y+15>cajY && y-15<cajY) {cajX= cajX-5; }
@@ -277,32 +203,21 @@ void caja() {
 }
 
 void level4() {
-  background(245,255,0);
-  fill(15,237,0);
-  rect(30,60,30,30);
-  jugador();
-  caja();
-  if (x>10 && x<50 && y>40 && y<80){
-    ketchup();  }  
+  background(245,255,0); fill(15,237,0); rect(30,60,30,30); jugador(); caja();
+  if (x>10 && x<50 && y>40 && y<80){ ketchup();  }  
 }
 
 void pan() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(23).png?raw=true",panX,panY,20,20);
-  carajo2();
-  fill(242,247,120);
-  rect(invX,0,20,20);
+  carajo2(); fill(242,247,120); rect(invX,0,20,20);
   if (panY>=0){ panY= panY+10; }
   if (panY>=0) { panX= invX; }
   if (panY ==320) { panY=0; invX= random(320); score= score-1; }
 }
 
 void level5() {
-  background(210,217,36);
-  jugador();
-  pan();
-  fill(0,0,0);
-  textSize(20);
-  text(score,20,40);
+  background(210,217,36); jugador(); pan();
+  fill(0,0,0); textSize(20); text(score,20,40);
   if (keyPressed && key=="s") { y = y -10;}
   if (keyPressed && key=="w") { y = y +10;}
   if (keyPressed && key=="d") { x = x -10;}

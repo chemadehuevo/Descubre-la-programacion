@@ -1,16 +1,1 @@
-void main(){
-  //Orejas
-  ellipse(100,100,70,70);
-  ellipse(220,100,70,70);
-  //cabeza
-  ellipse(160,160,150,150);
-  //Ojos
-  ellipse(140,140,30,50);
-  ellipse(150,140,5,5);
-  ellipse(180,140,30,50);
-  ellipse(170,140,5,5);
-  //Nariz
-  ellipse(160,170,31,10);
-  //Boca
-  ellipse(160,200,15,5);
-}
+Idun y las manzanas de oro

@@ -1,6 +1,7 @@
 int x= 140;int y= 140;int eneX = 5;int eneY = 120;int ene2Y= 160;
 int ene3Y= 200;int ene2X= 120;int ene3X= 230;int cajX=30;int cajY=220;
-int panY=0;int panX=120;int invX=random(320);int score;
+int panY=0;int panX=120;int invX=random(320);int score; int bosX= 0;
+int bosY=0; int proX=0; int proY=0; int pro2X=0; int pro2Y=0; 
   
 void main() {
  animate (ejecutar); }
@@ -64,7 +65,7 @@ void carajo() {
 void carajo2() {
   if (x+20>panX && x-20<panX && y+20>panY && y-20<panY){
     score= score+2; panY=0; invX= random(320); }
-  if (score==10){ animate(level6); } if (score==-5){ animate(muerte); }
+  if (score>=10){ animate(level6); } if (score<=-5){ animate(muerte); }
 }
 
 void controles() {
@@ -117,12 +118,10 @@ void tesoro() {
   jugador();
 }
 
-void mapa() {
-  volver();
+void mapa() { volver();
   background(13,255,238);
   fill(121,255,64);
-  rect(20,20,30,30);
-  jugador();
+  rect(20,20,30,30); jugador();
   if(x>8 && x<50 && y>7 && y<52) { 
     fill(253,2,2);
     text("Are you sure?",110,150);
@@ -140,9 +139,7 @@ void mapa() {
 
 
 void muerte(){
-  score=0; cajX=30; cajY= 220;
-  background(0,0,0);
-  text("YOU DIE",50,50);
+  score=0; cajX=30; cajY= 220; background(0,0,0); text("YOU DIE",50,50);
    if (keyPressed && key=="Enter") {     
        x=150; y=150; animate(mapa); } 
 }
@@ -197,10 +194,8 @@ void caja() { fill(0,0,0); rect(cajX,cajY,20,20);
   if (x+15>cajX && x-15==cajX && y+15>cajY && y-15<cajY) {cajX= cajX-5; }
   if (x+15==cajX && x-15<cajX && y+15>cajY && y-15<cajY) {cajX= cajX+5; }
   if (cajX>10 && cajX<50 && cajY>40 && cajY<80){ ketchup();  }
-  if (cajY<0){ cajY=0;}
-  if (cajX<0){ cajX=0;}
-  if (cajY > 300){ cajY=300;}
-  if (cajX > 300){ cajX=300;}
+  if (cajY<0){ cajY=0;} if (cajX<0){ cajX=0;}
+  if (cajY > 300){ cajY=300;} if (cajX > 300){ cajX=300;}
 }
 
 void level4() {
@@ -225,7 +220,27 @@ void level5() {
   if (keyPressed && key=="a") { x = x +10;}
 }
 
+void proyectil() {
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",proX,proY,20,20);
+  if ( proY>=0) { proY=proY+20; } if (proY>=320) { proX=bosX; proY=0; }
+  if (x+20>proX && x-10<proX && y+20>proY && y-20<proY){
+    animate(muerte);  }
+}
+
+void proyectil2() { proX=bosX; proY=bosY;   
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",proX,proY,20,20);
+  if ( pro2X>=90) { proY=pro2Y+20; } if (pro2Y>=320) { pro2X=bosX; pro2Y=0; }
+  if (x+20>pro2X && x-10<pro2X && y+20>pro2Y && y-20<pro2Y){
+    animate(muerte);  }
+}
+
+void boss() {
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(25).png?raw=true",bosX,bosY,40,40);
+  proyectil();
+  if (bosX >=0 && bosY ==0) { bosX = bosX +5; } if (bosX >=300) { bosX= bosX -5; bosY =1; }
+  if (bosX<320 && bosY== 1){ bosX= bosX -5; } if (bosX<0 && bosY== 1){ bosX= 5; bosY= 0;}
+}
+
 void level6(){
-  background(0,0,0);
-  jugador();
+  background(0,0,0); jugador(); boss();
 }

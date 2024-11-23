@@ -140,6 +140,7 @@ void mapa() {
 
 
 void muerte(){
+  score=0; cajX=30; cajY= 220;
   background(0,0,0);
   text("YOU DIE",50,50);
    if (keyPressed && key=="Enter") {     

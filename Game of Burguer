@@ -222,21 +222,21 @@ void level5() {
 
 void proyectil() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",proX,proY,20,20);
-  if ( proY>=0) { proY=proY+20; } if (proY>=320) { proX=bosX; proY=0; }
-  if (x+20>proX && x-10<proX && y+20>proY && y-20<proY){
+  if ( proY>=0) { proY=proY+10; } if (proY>=320) { proX=bosX; proY=0; }
+  if (x+20>proX && x-20<proX && y+20>proY && y-20<proY){
     animate(muerte);  }
 }
 
-void proyectil2() { proX=bosX; proY=bosY;   
-  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",proX,proY,20,20);
-  if ( pro2X>=90) { proY=pro2Y+20; } if (pro2Y>=320) { pro2X=bosX; pro2Y=0; }
-  if (x+20>pro2X && x-10<pro2X && y+20>pro2Y && y-20<pro2Y){
+void proyectil2() {  pro2X=bosX;
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",pro2X,pro2Y,20,20);
+  if ( pro2X>=40) { pro2Y=pro2Y+10; } if (pro2Y>=320) { pro2X=bosX; pro2Y=0; }
+  if (x+20>pro2X && x-20<pro2X && y+20>pro2Y && y-20<pro2Y){
     animate(muerte);  }
 }
 
 void boss() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(25).png?raw=true",bosX,bosY,40,40);
-  proyectil();
+  proyectil(); proyectil2();
   if (bosX >=0 && bosY ==0) { bosX = bosX +5; } if (bosX >=300) { bosX= bosX -5; bosY =1; }
   if (bosX<320 && bosY== 1){ bosX= bosX -5; } if (bosX<0 && bosY== 1){ bosX= 5; bosY= 0;}
 }

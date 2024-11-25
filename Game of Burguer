@@ -1,8 +1,11 @@
 int x= 140;int y= 140;int eneX = 5;int eneY = 120;int ene2Y= 160;
 int ene3Y= 200;int ene2X= 120;int ene3X= 230;int cajX=30;int cajY=220;
-int panY=0;int panX=120;int invX=random(320);int score; int bosX= 0;
+int panY=0;int panX=120;int invX=random(320);int score=0; int bosX= 0;
 int bosY=0; int proX=0; int proY=0; int pro2X=0; int pro2Y=0; 
+int pjX=0; int pjY=0;
   
+textSize(20);
+
 void main() {
  animate (ejecutar); }
 
@@ -122,15 +125,10 @@ void mapa() { volver();
   background(13,255,238);
   fill(121,255,64);
   rect(20,20,30,30); jugador();
-  if(x>8 && x<50 && y>7 && y<52) { 
-    fill(253,2,2);
-    text("Are you sure?",110,150);
-    text("NO",190,50);
-    text("+Escape",180,80);
-    fill(2,118,0);
-    text("YES",100,50);
-    text("+Enter",90,80); 
-   }
+  if(x>8 && x<50 && y>7 && y<52) {  fill(253,2,2);
+    text("Are you sure?",110,150); text("NO",190,50);
+    text("+Escape",180,80); fill(2,118,0);
+    text("YES",100,50); text("+Enter",90,80); }
    if(x>8 && x<50 && y>7 && y<52)
   if(keyPressed && key =="Enter"){  animate(level1); }
   if(x>18 && x<60 && y>17 && y<62)
@@ -222,14 +220,14 @@ void level5() {
 
 void proyectil() {
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",proX,proY,20,20);
-  if ( proY>=0) { proY=proY+10; } if (proY>=320) { proX=bosX; proY=0; }
+  if ( proY>=0) { proY=proY+5; } if (proY>=320) { proX=bosX; proY=0; }
   if (x+20>proX && x-20<proX && y+20>proY && y-20<proY){
     animate(muerte);  }
 }
 
 void proyectil2() {  pro2X=bosX;
   image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(24).png?raw=true",pro2X,pro2Y,20,20);
-  if ( pro2X>=40) { pro2Y=pro2Y+10; } if (pro2Y>=320) { pro2X=bosX; pro2Y=0; }
+  if ( pro2X>=40) { pro2Y=pro2Y+5; } if (pro2Y>=320) { pro2X=bosX; pro2Y=0; }
   if (x+20>pro2X && x-20<pro2X && y+20>pro2Y && y-20<pro2Y){
     animate(muerte);  }
 }
@@ -241,6 +239,14 @@ void boss() {
   if (bosX<320 && bosY== 1){ bosX= bosX -5; } if (bosX<0 && bosY== 1){ bosX= 5; bosY= 0;}
 }
 
-void level6(){
-  background(0,0,0); jugador(); boss();
+void carajo3() { if (keyPressed && key=="e") { pjX=x+10; pjY=y; } pjY = pjY -10; 
 }
+
+void disparo() {  level6(); rect(pjX,pjY,5,20); carajo3(); 
+}
+
+void level6(){ 
+  background(0,0,0); jugador(); boss(); fill(255,255,255); textSize(20); text(score+1,20,40);
+  if (keyPressed && key=="e") { animate(disparo); }
+  if (pjX+30>bosX && pjX-30<bosX && pjY+20>bosY && pjY-20<bosY)  { score=score-1; pjY=-40; }
+  if (score==0) { animate(tesoro); }  }

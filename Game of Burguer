@@ -113,11 +113,13 @@ void volver() {
 
 void sure() {
   background(0,0,0);
+    if (keyPressed && key=="A") {
+     animate(ejecutar); }
 }
 
 void tesoro() {
   background(20,237,58);
-  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",100,100,30,30);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",160,40,40,40);
   jugador();
 }
 
@@ -247,6 +249,15 @@ void disparo() {  level6(); rect(pjX,pjY,5,20); carajo3();
 
 void level6(){ 
   background(0,0,0); jugador(); boss(); fill(255,255,255); textSize(20); text(score+1,20,40);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-burguer.png?raw=true",20,280,30,30,);
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-0%20(jaula).png?raw=true",20,280,30,30);
   if (keyPressed && key=="e") { animate(disparo); }
   if (pjX+30>bosX && pjX-30<bosX && pjY+20>bosY && pjY-20<bosY)  { score=score-1; pjY=-40; }
-  if (score==0) { animate(tesoro); }  }
+  if (score==0) { animate(finall);}     
+  }
+
+void finall() { background(0,0,0); jugador();
+  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/pixil-frame-burguer.png?raw=true",20,280,30,30,);
+    if (x>5  && x<40 && y>260 && y<300) 
+      if(keyPressed && key =="e") { animate(tesoro);}
+}

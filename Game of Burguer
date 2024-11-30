@@ -2,7 +2,7 @@ int x= 140;int y= 140;int eneX = 5;int eneY = 120;int ene2Y= 160;
 int ene3Y= 200;int ene2X= 120;int ene3X= 230;int cajX=30;int cajY=220;
 int panY=0;int panX=120;int invX=random(320);int score=0; int bosX= 0;
 int bosY=0; int proX=0; int proY=0; int pro2X=0; int pro2Y=0; 
-int pjX=0; int pjY=0;
+int pjX=0; int pjY=0;int cX=80;int cY=320;
   
 textSize(15);
 
@@ -108,19 +108,7 @@ void salir() {
 
 void volver() {
   if (keyPressed && key=="Escape") {
-   animate(sure);  }
-}
-
-void sure() {
-  background(0,0,0);
-    if (keyPressed && key=="A") {
-     animate(ejecutar); }
-}
-
-void tesoro() {
-  background(20,237,58);
-  image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",160,40,40,40);
-  jugador();
+   animate(ejecutar);  }
 }
 
 void mapa() { volver();
@@ -132,7 +120,7 @@ void mapa() { volver();
     text("+Escape",180,80); fill(2,118,0);
     text("YES",100,50); text("+Enter",90,80); }
    if(x>8 && x<50 && y>7 && y<52)
-  if(keyPressed && key =="Enter"){  animate(level1); }
+  if(keyPressed && key =="Enter"){  animate(tesoro); }
   if(x>18 && x<60 && y>17 && y<62)
   if(keyPressed && key =="Escape"){  animate(mapa); }
 }
@@ -262,5 +250,16 @@ void finall() { background(0,0,0);
   if (keyPressed && key=="e"){ animate(tesoro);  }
   if(x>5  && x<40 && y>260 && y<300) { 
    fill(255,255,255); rect(70,260,30,30);
-   fill(0,0,0); text("E",78,284); } 
+   fill(0,0,0); text("E",78,284); }  }
+
+void tesoro() {
+  background(20,237,58); image("https://github.com/chemadehuevo/Descubre-la-programacion/blob/main/IMAGEN/BUrguer.png?raw=true",30,30,40,40); jugador();
+  if (x>10  && x<65 && y>10 && y<65) 
+  { fill(255,255,255); rect(100,40,30,30);
+   fill(0,0,0); text("Eat",100,63);  }
+  if(x>10  && x<65 && y>10 && y<65)
+  if (keyPressed && key=="e"){ animate(credits);  } }
+
+void credits() { background(0,0,0); fill(255,255,255);text("By ChemaDeHuevo",cX,cY);
+   if(y<=320) { cY=cY-1; }
 }

@@ -2,7 +2,7 @@ int x= 140;int y= 140;int eneX = 5;int eneY = 120;int ene2Y= 160;
 int ene3Y= 200;int ene2X= 120;int ene3X= 230;int cajX=30;int cajY=220;
 int panY=0;int panX=120;int invX=random(320);int score=0; int bosX= 0;
 int bosY=0; int proX=0; int proY=0; int pro2X=0; int pro2Y=0; 
-int pjX=0; int pjY=0;int cX=80;int cY=320;
+int pjX=0; int pjY=0;int cX=80;int cY=320;int cx=10;int cy=-130;
   
 textSize(15);
 
@@ -48,12 +48,11 @@ void play() {  if (mousePressed)  if (mouseX >82 && mouseX <250)
     if(mousePressed) { if(mouseButton == LEFTBUTTON){ animate(fondo4);
 }  }  }
 
-void fondo2() { salir(); background(255,255,255);
-  text("By Chema De Huevo",75,140); fill(0,0,0); 
+void fondo2() { credits();
 }
 
-void fondo3() {salir(); background(255,255,255); text("Seleccionar: LeftButton",70,140);
-  fill(84,14,116); text("Salir: RightButton",90,170); fill(84,14,116); }
+void fondo3() {salir(); background(255,255,255); text("W,A,S,D: Mover",90,140);
+  fill(84,14,116); text("(Nivel6) E:Disparar",90,170); fill(84,14,116); text("Escape: Salir",90,200); fill(84,14,116); }
 
 void fondo4() { salir(); background(0,78,215); text("rancking",60,60); }
 
@@ -120,7 +119,7 @@ void mapa() { volver();
     text("+Escape",180,80); fill(2,118,0);
     text("YES",100,50); text("+Enter",90,80); }
    if(x>8 && x<50 && y>7 && y<52)
-  if(keyPressed && key =="Enter"){  animate(tesoro); }
+  if(keyPressed && key =="Enter"){  animate(level1); }
   if(x>18 && x<60 && y>17 && y<62)
   if(keyPressed && key =="Escape"){  animate(mapa); }
 }
@@ -128,7 +127,7 @@ void mapa() { volver();
 
 void muerte(){
   score=0; cajX=30; cajY= 220; background(0,0,0); text("YOU DIE",50,50);
-   if (keyPressed && key=="Enter") {     
+   if (keyPressed && key=="Escape") {     
        x=150; y=150; animate(mapa); } 
 }
 
@@ -201,7 +200,7 @@ void pan() {
 
 void level5() {
   background(210,217,36); jugador(); pan();
-  fill(0,0,0); textSize(20); text(score,20,40);
+  fill(0,0,0); text(score,20,40);
   if (keyPressed && key=="s") { y = y -10;}
   if (keyPressed && key=="w") { y = y +10;}
   if (keyPressed && key=="d") { x = x -10;}
@@ -260,6 +259,8 @@ void tesoro() {
   if(x>10  && x<65 && y>10 && y<65)
   if (keyPressed && key=="e"){ animate(credits);  } }
 
-void credits() { background(0,0,0); fill(255,255,255);text("By ChemaDeHuevo",cX,cY);
-   if(y<=320) { cY=cY-1; }
+void credits() { background(0,0,0); fill(255,255,255);text("By ChemaDeHuevo",cX,cY); text("Escape",cx,cy);
+   if(cY<=320) { cY=cY-1; } if (cY<=160) { cY= cY+1; }
+   if(cy>=-130) { cy=cy+1; } if (cy>=30) { cy= cy-1; }  
+   if (keyPressed && key=="Escape"){ animate(ejecutar);  } 
 }

@@ -1,2 +1,0 @@
-# Descubre-la-programacion
-huevo

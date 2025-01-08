@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7h4bt1hitgw"]
+
+[ext_resource type="Texture2D" uid="uid://37l5t5kdh6xq" path="res://pixil-frame-0 (1).png" id="1_6odcp"]
+[ext_resource type="Script" path="res://MENU/menú.gd" id="1_arjpm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rehqc"]
+
+[node name="Menú" type="Node2D"]
+position = Vector2(0, 2)
+script = ExtResource("1_arjpm")
+
+[node name="Pixil-frame-0(1)" type="Sprite2D" parent="."]
+position = Vector2(575.5, 321.5)
+scale = Vector2(1.161, 0.651)
+texture = ExtResource("1_6odcp")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 307.0
+offset_top = 255.0
+offset_right = 818.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 70
+text = "PLAY"
+icon = SubResource("CompressedTexture2D_rehqc")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
